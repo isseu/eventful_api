@@ -21,7 +21,7 @@ OAuth consumer secret:
 
 ```ruby
   EventfulApi.configure do |config|
-    config.application_key = YOUR_APPLICATION_KEY
+    config.app_key = YOUR_APPLICATION_KEY
     config.consumer_key = YOUR_CONSUMER_KEY
     config.consumer_secret = YOUR_CONSUMER_SECRET
   end
@@ -51,7 +51,7 @@ convenient facade for generating both request tokens and access tokens.
   # store the request token and secret for later use and redirect the user
   session[:request_token] = request_token.token
   session[:request_secret] = request_token.secret
-  redirect_to token.redirect_url
+  redirect_to request_token.authorize_url.redirect_url
 ```
 
 ### Step 2. Acquiring an access token during the callback
